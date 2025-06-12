@@ -1,0 +1,24 @@
+lzc-sdk-version: "0.1"
+name: CloudDrive
+package: cloud.lazycat.app.clouddrive2
+version: 0.9.0
+description: 一个强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案。
+homepage: https://www.clouddrive2.com
+author: clouddrive2
+application:
+  subdomain: clouddrive2
+  background_task: true
+  environment:
+    - TZ=Asia/Shanghai
+    - CLOUDDRIVE_HOME=/Config
+  public_path:
+    - /
+  routes:
+    - /=http://host.lzcapp:19798/
+services:
+  clouddrive2:
+    image: docker.1ms.run/cloudnas/clouddrive2:0.9.0
+
+ext_config:
+  enable_document_access: true
+  enable_media_access: true
