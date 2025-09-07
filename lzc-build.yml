@@ -7,14 +7,9 @@ pkgout: ./
 icon: ./icon.png
 
 compose_override:
-  services:
-    clouddrive2:
-      devices:
-        - /dev/fuse:/dev/fuse
-      volumes:
-        - /lzcapp/var/config:/Config
-        - /lzcapp/run/mnt/home/CloudDrive:/CloudNAS:shared
-        - /lzcapp/run/mnt/home/CloudDriveShare:/media:shared #optional media path of host
-      pid: "host"
-      privileged: true
-      network_mode: "host"
+    services:
+        clouddrive2:
+            devices:
+                - /dev/fuse:/dev/fuse
+            pid: "host"
+            privileged: true
