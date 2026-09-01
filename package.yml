@@ -1,0 +1,24 @@
+package: cloud.lazycat.app.clouddrive2
+version: 1.0.15
+name: CloudDrive2
+description: 一个强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案。
+homepage: https://www.clouddrive2.com
+author: clouddrive2
+min_os_version: 1.6.1
+permissions:
+  required:
+    - fuse.mount
+    - net.host
+    - net.internet
+    - document.read
+    - document.write
+  optional:
+    - media.read
+    - media.write
+locales:
+  zh:
+    name: CloudDrive2
+    description: 一个强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式多云盘解决方案。
+  en:
+    name: CloudDrive2
+    description: A unified multi-cloud drive manager with support for mounting cloud storage locally.

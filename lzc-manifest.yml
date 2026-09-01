@@ -1,0 +1,23 @@
+application:
+  subdomain: clouddrive2
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://clouddrive2:19798/
+
+services:
+  clouddrive2:
+    image: docker.1ms.run/cloudnas/clouddrive2:1.0.15
+    environment:
+      - TZ=Asia/Shanghai
+      - CLOUDDRIVE_HOME=/Config
+    binds:
+      - /lzcapp/var/config:/Config
+      - /lzcapp/var/CloudDrive:/CloudNAS
+      - /lzcapp/var/CloudDriveShare:/media
+
+ext_config:
+  enable_document_access: true
+  enable_media_access: true
