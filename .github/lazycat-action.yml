@@ -1,0 +1,40 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/clouddrive2.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: clouddrive2
+
+build:
+  run_buildscript: false
+
+images:
+  # 上游 cloudnas/clouddrive2 有完整三段 SemVer（0.5.0 ~ 1.0.18），amd64-* 与 latest 不匹配正则
+  - id: clouddrive2
+    target: service
+    service: clouddrive2
+    source: cloudnas/clouddrive2
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to Miaomiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: CloudDrive2
+    summary: "一个强大的多云盘管理工具，为用户提供包含云盘本地挂载的一站式的多云盘解决方案"

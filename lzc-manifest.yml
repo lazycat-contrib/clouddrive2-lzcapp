@@ -9,6 +9,7 @@ application:
 
 services:
   clouddrive2:
+    # upstream: cloudnas/clouddrive2:1.0.15
     image: docker.1ms.run/cloudnas/clouddrive2:1.0.15
     environment:
       - TZ=Asia/Shanghai
