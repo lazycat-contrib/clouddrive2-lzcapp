@@ -6,11 +6,10 @@ application:
   upstreams:
     - location: /
       backend: http://clouddrive2:19798/
-
 services:
   clouddrive2:
-    # upstream: cloudnas/clouddrive2:1.0.15
-    image: docker.1ms.run/cloudnas/clouddrive2:1.0.15
+    # upstream: cloudnas/clouddrive2:1.0.18
+    image: docker.1ms.run/cloudnas/clouddrive2:1.0.18
     environment:
       - TZ=Asia/Shanghai
       - CLOUDDRIVE_HOME=/Config
@@ -18,7 +17,6 @@ services:
       - /lzcapp/var/config:/Config
       - /lzcapp/var/CloudDrive:/CloudNAS
       - /lzcapp/var/CloudDriveShare:/media
-
 ext_config:
   enable_document_access: true
   enable_media_access: true
