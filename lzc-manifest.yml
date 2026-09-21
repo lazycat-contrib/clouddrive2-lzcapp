@@ -8,8 +8,8 @@ application:
       backend: http://clouddrive2:19798/
 services:
   clouddrive2:
-    # upstream: cloudnas/clouddrive2:1.0.18
-    image: docker.1ms.run/cloudnas/clouddrive2:1.0.18
+    # upstream: cloudnas/clouddrive2:1.0.19
+    image: docker.1ms.run/cloudnas/clouddrive2:1.0.19
     environment:
       - TZ=Asia/Shanghai
       - CLOUDDRIVE_HOME=/Config
